@@ -7,7 +7,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'newrelic_rpm'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 
 group :doc do
