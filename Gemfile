@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.1.0'
 gem 'cancan'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
