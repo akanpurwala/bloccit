@@ -1,16 +1,17 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'devise'
+gem 'faker'
+gem 'jbuilder', '~> 1.2'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'protected_attributes'
 gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
-gem 'bootstrap-sass', '~> 2.3.1.0'
-gem 'protected_attributes'
-gem 'faker'
-gem 'devise'
+gem 'uglifier', '>= 1.3.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
