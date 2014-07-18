@@ -15,6 +15,7 @@ class Ability
     if user.role? :moderator
       can :destroy, Post
       can :destroy, Comment
+      can :manage, Topic
     end
 
     # Admins can do anything
