@@ -1,5 +1,5 @@
 <h1><%= markdown @post.title %></h1>
-
+<br>
 <div class="row">
   <div class="span8">
     <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
@@ -8,6 +8,7 @@
       <%= @post.user.name %>
     </small>
     <p><%= markdown @post.body %></p>
+    <%= image_tag(@post.image.url) if @post.image? %>
   </div>
   <div class="span4">
     <% if can? :edit, @post %>
