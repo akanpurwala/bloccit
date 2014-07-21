@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
     flash.keep(:alert)
     redirect_to root_url
   end
+
+  before_filter :update_sanitized_params, if: :devise_controller?
+  def update_sanitized_params
+    devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:email, :name, :avatar, :password, :password_confirmation, :current_password)}
+  end
 end
