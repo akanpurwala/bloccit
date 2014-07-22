@@ -1,8 +1,6 @@
 Bloccit::Application.routes.draw do
 
-  devise_for :users do
-    delete 'logout' => 'sessions#destroy', :as => :destroy_user_session
-  end
+  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 
   resources :topics do
     resources :posts, except: [:index] do
