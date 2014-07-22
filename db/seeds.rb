@@ -3,7 +3,7 @@ require 'faker'
 topics = []
 15.times do
   topics << Topic.create(
-    name: Faker::Lorem.words(rand(1..10)).join(" "),
+    name: Faker::Lorem.words(rand(3..7)).join(" "),
     description: Faker::Lorem.paragraphs(rand(1..4)).join("\n"))
 end
 
@@ -17,17 +17,18 @@ rand(4..10).times do
   u.skip_confirmation!
   u.save
 
-  rand(5..12).times do
+  rand(10..30).times do
     topic = topics.first
     p = u.posts.create(
       topic: topic,
-      title: Faker::Lorem.words(rand(1..10)).join(" "), 
+      title: Faker::Lorem.words(rand(4..10)).join(" "), 
       body: Faker::Lorem.paragraphs(rand(1..4)).join("\n"))
     p.update_attribute(:created_at, Time.now - rand(600..31536000))
+    p.save
 
     topics.rotate!
 
-    rand(3..7).times do
+    rand(1..2).times do
       p.comments.create(
         body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"))
     end
