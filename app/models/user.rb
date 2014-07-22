@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar
   has_many :posts
+  has_many :comments
   before_create :set_member
   mount_uploader :avatar, AvatarUploader
 
