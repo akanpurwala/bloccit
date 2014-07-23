@@ -7,6 +7,7 @@ class Ability
     # if a member, they can manage their own posts
     # or create new ones
     if user.role? :member
+      can :manage, Favorite, user_id: user.id
       can :create, Vote
       can :manage, Post, user_id: user.id
       can :manage, Comment, user_id:user.id
@@ -16,7 +17,6 @@ class Ability
     if user.role? :moderator
       can :destroy, Post
       can :destroy, Comment
-      can :manage, Topic
     end
 
     # Admins can do anything
@@ -24,7 +24,9 @@ class Ability
       can :manage, :all
     end
 
-    can :read, :all
+    can :read, Topic, public: true
+    can :read, Post
+    can :read, Comment
   end
 
 end
