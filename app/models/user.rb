@@ -43,6 +43,14 @@ class User < ActiveRecord::Base
   def voted(post)
     self.votes.where(post_id: post.id).first
   end
+
+  def sum_votes
+    votes = 0
+    self.posts.each do |post|
+      votes += post.votes.count
+    end
+    votes.to_i
+  end
   
   private
 
