@@ -11,6 +11,7 @@ class Ability
       can :create, Vote
       can :manage, Post, user_id: user.id
       can :manage, Comment, user_id:user.id
+      can :read, Topic
     end
 
     # moderators can delete any posts

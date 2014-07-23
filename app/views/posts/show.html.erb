@@ -18,14 +18,12 @@
     <p><%= image_tag(@post.image_url) if @post.image? %></p>
     <hr/>
     
-    <h3><%= @comments.count %> Comments</h3>
-    
     <% if can? :create, Comment %>
-      <hr/>
       <h4>New Comment</h4>
       <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
     <% end %>
     
+    <h3><%= pluralize(@comments.count, 'Comment') %></h3>
     <%= render @comments %>
   </div>
   <div class="span2">
