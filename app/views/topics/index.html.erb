@@ -1,7 +1,7 @@
 <h1>Topics</h1>
 
 <div class="row">
-  <div class="span8">
+  <div class="span10">
     <% @topics.each do |topic| %>
       <div class="media">
         <div class="media-body">
@@ -16,9 +16,9 @@
     <% end %>
     <%= will_paginate @topics %>
   </div>
-  <div class="span4">
+  <div class="span2">
     <% if can? :create, Topic %>
-      <%= link_to "New Topic", new_topic_path, class: "btn btn-large btn-block" %>
+      <%= link_to "New Topic", new_topic_path, class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
 </div>
