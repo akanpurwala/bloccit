@@ -24,6 +24,7 @@ rand(4..10).times do
       title: Faker::Lorem.words(rand(4..10)).join(" "), 
       body: Faker::Lorem.paragraphs(rand(1..4)).join("\n"))
     p.update_attribute(:created_at, Time.now - rand(600..31536000))
+    p.update_rank
     p.save
 
     topics.rotate!
