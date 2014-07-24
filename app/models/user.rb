@@ -57,10 +57,10 @@ class User < ActiveRecord::Base
     self.votes.where(post_id: post.id).first
   end
 
-  def sum_votes
+  def sum_points
     votes = 0
     self.posts.each do |post|
-      votes += post.votes.count
+      votes += post.votes.sum(:value)
     end
     votes.to_i
   end
