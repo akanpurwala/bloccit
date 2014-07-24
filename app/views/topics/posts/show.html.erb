@@ -24,7 +24,7 @@
     <% end %>
     
     <h3><%= pluralize(@comments.count, 'Comment') %></h3>
-    <%= render @comments %>
+    <%= render partial: 'comments/comment', collection: @comments %>
   </div>
   <div class="span2">
     <% if can? :edit, @post %>
